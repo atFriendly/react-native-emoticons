@@ -70,7 +70,8 @@ class Emoticons extends React.Component {
         concise: true,
         showHistoryBar: true,
         showPlusBar: true,
-        asyncRender: false
+		asyncRender: false,
+		offsetBottom: 0,
     };
 
     componentDidMount() {
@@ -99,7 +100,7 @@ class Emoticons extends React.Component {
             this.state.position,
             {
                 duration: 300,
-                toValue: this.props.show ? 0 : -300
+                toValue: this.props.show ? (0 + this.props.offsetBottom) : -300
             }
         ).start();
         Animated.timing(
@@ -383,7 +384,8 @@ Emoticons.propTypes = {
     concise: PropTypes.bool,
     showHistoryBar: PropTypes.bool,
     showPlusBar: PropTypes.bool,
-    asyncRender: PropTypes.bool
+	asyncRender: PropTypes.bool,
+	offsetBottom: PropTypes.number,
 };
 
 
