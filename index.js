@@ -56,7 +56,7 @@ class Emoticons extends React.Component {
             data: [],
             groupIndex: Platform.OS === 'android' ? 0 : 1,
             showWV: false,
-            position: new Animated.Value(this.props.show ? 0 : -300),
+            position: new Animated.Value(this.props.show ? 0 : -400),
             wvPosition: new Animated.Value(-height),
             history: [],
             currentMainTab: 0,
@@ -100,7 +100,7 @@ class Emoticons extends React.Component {
             this.state.position,
             {
                 duration: 300,
-                toValue: this.props.show ? (0 + this.props.offsetBottom) : -300
+                toValue: this.props.show ? (0 + this.props.offsetBottom) : -400
             }
         ).start();
         Animated.timing(
